@@ -1,0 +1,31 @@
+/*Working on The login and sign up landing page*/
+.card{
+    width: 50%;
+    /* align-items: center; */
+    
+}
+.card-body{
+    width: auto;
+    background-color: black;
+}
+/*changing the color of the header*/
+h1{
+    color: white;
+}
+/*changing the color of the text in the log and signup*/
+form{
+    color: white;
+}
+
+/* changing the text below the button  */
+p {
+    padding-top: 1em;
+    color: grey;
+  }
+p a {
+    color: #e1e1e1;
+    text-decoration: none;
+}
+p a:hover {
+    color: #fff;
+}
