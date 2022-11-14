@@ -36,3 +36,10 @@ background-color: #6B728E !important;
 .navbar {
     background-color: #404258;
 }
+/* Changing the color of the text in navbar */
+nav div ul li a{
+    color: #ffffff !important;
+}
+nav div a{
+    color: white !important;
+}
