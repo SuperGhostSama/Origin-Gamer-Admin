@@ -1,8 +1,8 @@
 /*Working on The login and sign up landing page*/
 .card{
-    width: 50%;
-    /* align-items: center; */
-    
+ 
+    padding: 0.7rem;
+
 }
 .card-body{
     width: auto;
