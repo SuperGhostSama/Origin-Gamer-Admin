@@ -1,12 +1,12 @@
 /*Working on The login and sign up landing page*/
 .card{
- 
     padding: 0.7rem;
 
 }
+/* COLOR OF THE CARD */
 .card-body{
     width: auto;
-    background-color: black;
+    background-color: #404258;
 }
 /*changing the color of the header*/
 h1{
@@ -28,4 +28,7 @@ p a {
 }
 p a:hover {
     color: #fff;
+}
+body {
+background-color: #6B728E !important;
 }
