@@ -15,3 +15,6 @@ nav div a{
 body {
     background-color: #6B728E !important;
 }
+.navbar-toggler {
+    border: 2px solid #50577A !important;
+}
