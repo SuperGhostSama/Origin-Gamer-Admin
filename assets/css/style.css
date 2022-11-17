@@ -18,3 +18,24 @@ body {
 .navbar-toggler {
     border: 2px solid #50577A !important;
 }
+/*Shadow under the total products table*/
+.contentTable{
+    box-shadow: 12px 12px 2px -4px rgba(0,0,0,0.61) ;
+    -webkit-box-shadow: 12px 12px 2px -4px rgba(0,0,0,0.61 ) ;
+    -moz-box-shadow: 12px 12px 2px -4px rgba(0,0,0,0.61) ;
+}
+/*Resizing the img in the products table*/
+.productImage{
+    width: 3rem;
+
+}
+/*gave some padding to the table container to give it some spacing + used overflow to give it a X scroll in respponsive*/
+.tableContainer{
+    padding: 0rem 2rem  ;
+    overflow-x:auto;
+}
+@media(max-width: 568px) {
+.tableContainer{
+    padding:0;
+    }    
+}
