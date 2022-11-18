@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="ms-auto">
+        <a href="#modal-product" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
+    </div>
+    <!-- PRODUCT MODAL -->
+	<div class="modal fade" id="modal-product">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" id="form-product">
+					<div class="modal-header">
+						<h5 class="modal-title">Add Product</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+							<!-- This Input Allows Storing Product Index  -->
+							<input type="hidden" id="product-id">
+							
+							<div class="mb-3">
+								<label class="form-label" >Name</label>
+								<input name="name" type="text" class="form-control" id="product-name" required/>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Category</label>
+								<select class="form-select" id="product-category" name="productCategory" required>
+									<option selected disabled value="">Please select</option>
+									<option value="1">Graphic Card</option>
+									<option value="2">Processor</option>
+									<option value="3">Power Suply</option>
+									<option value="4">HDD Storage</option>
+									<option value="5">SSD Storage</option>
+									<option value="6">Cooler</option>
+									<option value="7">Case</option>
+								</select>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label" >Price</label>
+								<input name="price" type="text" class="form-control" id="product-price" required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label" >Quantity</label>
+								<input name="quantity" type="text" class="form-control" id="product-quantity" required/>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Description</label>
+								<textarea class="form-control" rows="10" id="product-description" name="productDescription" required></textarea>
+							</div>
+
+							<div class="mb-0">
+								<label class="col-md-4 control-label mb-1" for="filebutton">Product Image</label>
+								<div class="col-md-4">
+								<input id="filebutton" name="filebutton" class="input-file" type="file">
+								</div>
+							</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
+						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</html>
