@@ -89,7 +89,7 @@
     <!-- PRODUCTS TABLE -->
     <div class="tableContainer">
         <div class="d-flex justify-content-end mt-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex"><i class="bi bi-plus-circle-dotted me-1"></i>Add Product</button>
+            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex" onclick="addProduct()"><i class="bi bi-plus-circle-dotted me-1"></i>Add Product</button>
         </div>
         
       <table class="table table-dark table-hover table-striped ">
@@ -137,7 +137,7 @@
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form-product">
+				<form action="" method="POST" class="form">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -191,24 +191,25 @@
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="save">Save</button>
+						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="update">Update</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 </body>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</html>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
-  <?php if (isset($_GET['getProduct'])){ ?>
-    
-     $(document).ready(function { 
+  <?php if (isset($_GET['getProduct'])) { ?>
+    window.onload = function() {
+      $("#save").hide();
+      $("#update").show();
       $("#modal-product").modal("show");
-  }
-  )
-  <?php }
+    };
+<?php }
   ?>
 </script>
+<script src="../assets/js/script.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</html>
