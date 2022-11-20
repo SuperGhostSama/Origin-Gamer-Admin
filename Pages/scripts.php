@@ -8,13 +8,13 @@ session_start();
 $_SESSION['id']=1;
 
 //ROUTING
-if (isset($_POST['save'])){       saveTask();}
+if (isset($_POST['save'])){       saveProducts();}
 
-if (isset($_POST['update']))      updateTask();
-if (isset($_POST['delete']))      deleteTask();
+if (isset($_POST['update']))      updateProducts();
+if (isset($_POST['delete']))      deleteProducts();
 
 //SAVE FUNCTION
-function saveTask()
+function saveProducts()
 {
     $name = $_POST['name'];
     $category = $_POST['category'];
@@ -33,5 +33,23 @@ function saveTask()
     header('location:products.php');
     die;
 }
+
+//DISPLAY FUNCTION
+function getProducts()
+{
+    //CODE HERE
+    $query="SELECT
+        products.* , categories.name AS category
+        FROM products
+        INNER JOIN categories
+        ON products.category_id = categories.id
+        ";
+    //SQL SELECT
+    global $connection;//to make it visible into the scope of the function 
+    $result=mysqli_query($connection, $query);
+    
+    return $result;
+}
+
 
 //DELETE FUNCTION

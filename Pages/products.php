@@ -1,6 +1,7 @@
 <?php 
 
   include ('scripts.php');
+  $products = getProducts();
 
 ?>
 
@@ -84,13 +85,16 @@
           </tr>
         </thead>
         <tbody>
+          <?php foreach ($products as $product ) { ?>  
+
+          
           <tr class="text-center">
-            <th scope="row">1</th>
+            <th scope="row"><?php echo $product['id'] ?></th>
             <td><img class="productImage" src="../img/MSI-RTX-3070.jpg" alt=""></td>
-            <td>RTX 2060</td>
-            <td>Graphic Card</td>
-            <td>5000DH</td>
-            <td>20</td>
+            <td> <?php echo $product['name'] ?> </td>
+            <td> <?php echo $product['category'] ?> </td>
+            <td> <?php echo $product['price'] ?> </td>
+            <td> <?php echo $product['quantity'] ?> </td>
             <td>
                 <div class="d-flex flex-wrap justify-content-around">
                     <button class="btn btn-warning d-flex"></i>Update</button>
@@ -98,38 +102,7 @@
                 </div>
             </td>
           </tr>
-
-          <tr class="text-center">
-            <th scope="row">2</th>
-            <td><img class="productImage" src="../img/MSI-RTX-3070.jpg" alt=""></td>
-            <td>RTX 2060</td>
-            <td>Graphic Card</td>
-            <td>5000DH</td>
-            <td>20</td>
-            <td>
-                <div class="d-flex flex-wrap justify-content-around">
-                    <button class="btn btn-warning d-flex"></i>Update</button>
-                    <button class="btn btn-danger d-flex"></i>Delete</button>
-                </div>
-            </td>
-          </tr>
-
-          <tr class="text-center">
-            <th scope="row">3</th>
-            <td><img class="productImage" src="../img/MSI-OPTIX.jpg" alt=""></td>
-            <td>MSI OPTIX</td>
-            <td>Monitor</td>
-            <td>3000DH</td>
-            <td>5</td>
-            <td>
-                <div class="d-flex flex-wrap justify-content-around">
-                    <button class="btn btn-warning d-flex" type="submit" name="update"></i>Update</button>
-                    <button class="btn btn-danger d-flex" type="submit" name="delete"></i>Delete</button>
-                </div>
-            </td>
-          </tr>
-          
-          
+          <?php } ?>
         </tbody>
       </table>
     </div>
