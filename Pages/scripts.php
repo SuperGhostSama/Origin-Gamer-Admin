@@ -11,7 +11,7 @@ $_SESSION['id']=1;
 if (isset($_POST['save'])){       saveProducts();}
 
 if (isset($_POST['update']))      updateProducts();
-if (isset($_POST['delete']))      deleteProducts();
+if (isset($_GET['id']))      deleteProducts();
 
 //SAVE FUNCTION
 function saveProducts()
@@ -53,3 +53,17 @@ function getProducts()
 
 
 //DELETE FUNCTION
+function deleteProducts()
+{
+    //CODE HERE
+    $id = $_GET['id'];
+    //SQL DELETE
+    $query = "DELETE FROM products WHERE id='$id'";
+
+    global $connection;
+    mysqli_query($connection, $query);
+    
+    $_SESSION['message'] = "Product has been deleted successfully !";
+    header('location: products.php');
+    die;
+}

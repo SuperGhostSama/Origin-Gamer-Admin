@@ -98,7 +98,7 @@
             <td>
                 <div class="d-flex flex-wrap justify-content-around">
                     <button class="btn btn-warning d-flex"></i>Update</button>
-                    <button class="btn btn-danger d-flex"></i>Delete</button>
+                    <a href="scripts.php?id=<?php echo $product['id'] ?>" class="btn btn-danger d-flex"></i>Delete</a>
                 </div>
             </td>
           </tr>
