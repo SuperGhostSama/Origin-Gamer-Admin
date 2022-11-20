@@ -1,3 +1,10 @@
+<?php 
+
+  include ('scripts.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +58,12 @@
           </div>
         </nav>
   </header>  
-
+<?php
+  if(isset($_SESSION['message'])){
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
+  }
+?>
   <section>
     <!-- PRODUCTS TABLE -->
     <div class="tableContainer">
@@ -111,8 +123,8 @@
             <td>5</td>
             <td>
                 <div class="d-flex flex-wrap justify-content-around">
-                    <button class="btn btn-warning d-flex"></i>Update</button>
-                    <button class="btn btn-danger d-flex"></i>Delete</button>
+                    <button class="btn btn-warning d-flex" type="submit" name="update"></i>Update</button>
+                    <button class="btn btn-danger d-flex" type="submit" name="delete"></i>Delete</button>
                 </div>
             </td>
           </tr>
@@ -143,7 +155,7 @@
 
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<select class="form-select" id="product-category" name="productCategory" required>
+								<select class="form-select" id="product-category" name="category" required>
 									<option selected disabled value="">Please select</option>
 									<option value="1">Graphic Card</option>
 									<option value="2">Processor</option>
@@ -168,7 +180,7 @@
 
 							<div class="mb-3">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="10" id="product-description" name="productDescription" required></textarea>
+								<textarea class="form-control" rows="10" id="product-description" name="description" required></textarea>
 							</div>
 
 							<div class="mb-0">
