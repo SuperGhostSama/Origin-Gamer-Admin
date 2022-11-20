@@ -3,6 +3,26 @@
   include ('scripts.php');
   $products = getProducts();
 
+  if (isset($_GET['getProduct'])){
+    $product = getProduct($_GET['getProduct']);
+    $id=$product['id'];
+    $name=$product['name'];
+    $price=$product['price'];
+    $quantity=$product['quantity'];
+    $description=$product['description'];
+    $categoryID=$product['category_id'];
+
+    // var_dump($product);
+    // die;
+  }else{
+    $id='';
+    $name='';
+    $price='';
+    $quantity='';
+    $description='';
+    $categoryID='';
+
+  }
 ?>
 
 
@@ -85,9 +105,9 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($products as $product ) { ?>  
 
-          
+          <?php foreach ($products as $product ) { ?> 
+
           <tr class="text-center">
             <th scope="row"><?php echo $product['id'] ?></th>
             <td><img class="productImage" src="../img/MSI-RTX-3070.jpg" alt=""></td>
@@ -97,18 +117,23 @@
             <td> <?php echo $product['quantity'] ?> </td>
             <td>
                 <div class="d-flex flex-wrap justify-content-around">
-                    <button class="btn btn-warning d-flex"></i>Update</button>
+                    <a href="products.php?getProduct=<?php echo $product['id'] ?>" class="btn btn-warning d-flex"></i>Update</a>
                     <a href="scripts.php?id=<?php echo $product['id'] ?>" class="btn btn-danger d-flex"></i>Delete</a>
                 </div>
             </td>
           </tr>
+
           <?php } ?>
+
         </tbody>
       </table>
     </div>
-
   </section>
+
   <!-- PRODUCTS MODAL -->
+
+  
+
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -118,42 +143,42 @@
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
-							<!-- This Input Allows Storing Product Index  -->
-							<input type="hidden" id="product-id">
+							<!-- HIDDEN INPUT  -->
+							<input type="hidden" value=<?= $id ?> name="product-id">
 							
 							<div class="mb-3">
 								<label class="form-label" >Name</label>
-								<input name="name" type="text" class="form-control" id="product-name" required/>
+								<input name="name" type="text" class="form-control" id="product-name" value="<?= $name ?>" required/>
 							</div>
 
 							<div class="mb-3">
 								<label class="form-label">Category</label>
 								<select class="form-select" id="product-category" name="category" required>
 									<option selected disabled value="">Please select</option>
-									<option value="1">Graphic Card</option>
-									<option value="2">Processor</option>
-									<option value="3">Power Suply</option>
-									<option value="4">HDD Storage</option>
-									<option value="5">SSD Storage</option>
-									<option value="6">Cooler</option>
-									<option value="7">Case</option>
-									<option value="8">Mother Board</option>
+									<option <?= $product['category_id']=='1' ? 'selected' : ''?> value="1">Graphic Card</option>
+									<option <?= $product['category_id']=='2' ? 'selected' : ''?> value="2">Processor</option>
+									<option <?= $product['category_id']=='3' ? 'selected' : ''?> value="3">Power Suply</option>
+									<option <?= $product['category_id']=='4' ? 'selected' : ''?> value="4">HDD Storage</option>
+									<option <?= $product['category_id']=='5' ? 'selected' : ''?> value="5">SSD Storage</option>
+									<option <?= $product['category_id']=='6' ? 'selected' : ''?> value="6">Cooler</option>
+									<option <?= $product['category_id']=='7' ? 'selected' : ''?> value="7">Case</option>
+									<option <?= $product['category_id']=='8' ? 'selected' : ''?> value="8">Mother Board</option>
 								</select>
 							</div>
 
               <div class="mb-3">
 								<label class="form-label" >Price</label>
-								<input name="price" type="text" class="form-control" id="product-price" required/>
+								<input name="price" type="text" class="form-control" id="product-price" value="<?= $price ?>" required/>
 							</div>
 
               <div class="mb-3">
 								<label class="form-label" >Quantity</label>
-								<input name="quantity" type="text" class="form-control" id="product-quantity" required/>
+								<input name="quantity" type="text" class="form-control" id="product-quantity" value="<?= $quantity ?>" required/>
 							</div>
 
 							<div class="mb-3">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="10" id="product-description" name="description" required></textarea>
+								<textarea class="form-control" rows="10" id="product-description" name="description" required><?= $description ?></textarea>
 							</div>
 
 							<div class="mb-0">
@@ -173,5 +198,17 @@
 		</div>
 	</div>
 </body>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
+<script>
+  <?php if (isset($_GET['getProduct'])){ ?>
+    
+     $(document).ready(function { 
+      $("#modal-product").modal("show");
+  }
+  )
+  <?php }
+  ?>
+</script>

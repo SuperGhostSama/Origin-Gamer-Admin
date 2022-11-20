@@ -20,10 +20,10 @@ function saveProducts()
     $category = $_POST['category'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
+    $description = $_POST['description'];
     // image
     $id=$_SESSION['id'];
 
-    $description = $_POST['description'];
     //SQL INSERT
     $query = "INSERT INTO products(name ,category_id ,price,user_id ,quantity , description) VALUES ('$name','$category','$price','$id','$quantity','$description')";
 
@@ -66,4 +66,49 @@ function deleteProducts()
     $_SESSION['message'] = "Product has been deleted successfully !";
     header('location: products.php');
     die;
+}
+
+
+//THE ROLE OF THIS FUNCTION IS TO GET THE SELECTED PRODUCT FROM DATABASE AND STOCK IT IN VARIABLES
+function getProduct($id){
+    //CODE HERE
+    $query="SELECT
+        products.* , categories.name AS category
+        FROM products
+        INNER JOIN categories
+        ON products.category_id = categories.id WHERE products.id=$id
+        ";
+    //SQL SELECT
+    global $connection;//to make it visible into the scope of the function 
+    $result=mysqli_query($connection, $query);
+    
+    return mysqli_fetch_assoc($result);
+}
+
+//UPDATE FUNCTION
+function updateProduct(){
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $description = $_POST['description'];
+    $idProduct=$_POST['product-id']; //product-id is the hidden input in the modal
+    // image
+    $id=$_SESSION['id'];
+    
+
+    $description = $_POST['description'];
+    //SQL INSERT
+    $query= "UPDATE products 
+            SET name='$name', description='$description', price='$price', quantity ='$quantity', category_id ='$category'
+            WHERE id='$idProduct'";
+
+    global $connection;//to make it visible into the scope of the function 
+
+    $_SESSION['message'] = "Product has been updated successfully !";
+
+    mysqli_query($connection, $query);
+    header('location:products.php');
+    die;
+
 }
