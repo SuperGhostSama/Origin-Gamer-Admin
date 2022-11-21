@@ -3,9 +3,9 @@
 //INCLUDE DATABASE FILE
 include ('database.php');
 
-session_start();
+include ('session.php');
 
-$_SESSION['id']=1;
+
 
 //ROUTING
 if (isset($_POST['save'])){       saveProducts();}

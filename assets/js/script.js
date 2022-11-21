@@ -5,3 +5,4 @@ function addProduct() {
     $("#update").hide(); // used to hide the update button
     $("#save").show(); // used to show the save button
 }
+

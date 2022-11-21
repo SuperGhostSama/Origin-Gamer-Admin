@@ -62,8 +62,8 @@
 
                 <div class="btn-group d-flex justify-content-center mt-1">
                   <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="text" id="myInput" onkeyup="" placeholder="Search for names..">
+
                   </form>
                 </div>
                 
@@ -92,7 +92,7 @@
             <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex " onclick="addProduct()"><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
         </div>
         
-      <table class="table table-dark table-hover table-striped ">
+      <table class="table table-dark table-hover table-striped "  id="myTable">
         <thead>
           <tr class="text-center">
             <th scope="col">Id</th>
