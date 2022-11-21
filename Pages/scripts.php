@@ -10,7 +10,7 @@ $_SESSION['id']=1;
 //ROUTING
 if (isset($_POST['save'])){       saveProducts();}
 
-if (isset($_POST['update']))      updateProducts();
+if (isset($_POST['update']))      updateProduct();
 if (isset($_GET['id']))      deleteProducts();
 
 //SAVE FUNCTION
@@ -28,8 +28,8 @@ function saveProducts()
     $query = "INSERT INTO products(name ,category_id ,price,user_id ,quantity , description) VALUES ('$name','$category','$price','$id','$quantity','$description')";
 
     global $connection;//to make it visible into the scope of the function 
-    $_SESSION['message'] = "Product has been added successfully !";
     mysqli_query($connection, $query);
+    $_SESSION['message'] = "Product has been added successfully !";
     header('location:products.php');
     die;
 }

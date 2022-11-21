@@ -13,7 +13,7 @@
             <!-- NAVBAR -->
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 30px" />𝓞𝓻𝓲𝓰𝓲𝓷 𝓖𝓪𝓶𝓮𝓻</a>
+                    <a class="navbar-brand" href="dashboard.php"><img src="../img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 30px" />𝓞𝓻𝓲𝓰𝓲𝓷 𝓖𝓪𝓶𝓮𝓻</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -21,10 +21,10 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav flex-wrap me-auto mb-2 mb-lg-0 flex-row justify-content-center">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active d-flex" aria-current="page" href="dashboard.html">𝓓𝓪𝓼𝓱𝓑𝓸𝓪𝓻𝓭</a>
+                                <a class="nav-link active d-flex" aria-current="page" href="dashboard.php">𝓓𝓪𝓼𝓱𝓑𝓸𝓪𝓻𝓭</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active d-flex" href="products.html">𝓟𝓻𝓸𝓭𝓾𝓬𝓽𝓼</a>
+                                <a class="nav-link active d-flex" href="products.php">𝓟𝓻𝓸𝓭𝓾𝓬𝓽𝓼</a>
                             </li>
                         </ul>
                         <div class="btn-group d-flex">

@@ -22,10 +22,10 @@
                     <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
                       <ul class="navbar-nav flex-row justify-content-center">
                           <li class="nav-item mx-2">
-                              <button class="btn btn-secondary btn-sm"><a class="nav-link" aria-current="page" href="login.html">𝓛𝓸𝓰𝓘𝓷</a></button>
+                              <button class="btn btn-secondary btn-sm"><a class="nav-link" aria-current="page" href="login.php">𝓛𝓸𝓰𝓘𝓷</a></button>
                             </li>
                         <li class="nav-item">
-                          <button class="btn btn-secondary btn-sm"><a class="nav-link" href="signup.html">𝓢𝓲𝓰𝓷𝓤𝓹</a></button>
+                          <button class="btn btn-secondary btn-sm"><a class="nav-link" href="signup.php">𝓢𝓲𝓰𝓷𝓤𝓹</a></button>
                         </li>
                       </ul>
                   </div>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="d-flex flex-column align-items-center ">
                         <button type="submit" class="btn btn-light fw-bold mt-3">SIGNUP</button>
-                        <p>Already have an account? <a href="login.html">LogIn now</a></p>
+                        <p>Already have an account? <a href="login.php">LogIn now</a></p>
                     </div>
                 </form>
             </div>

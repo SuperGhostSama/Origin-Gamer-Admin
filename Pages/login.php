@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/login&signup.css">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>LogIn Origin Game</title>
 </head>
@@ -22,10 +21,10 @@
                         <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
                             <ul class="navbar-nav flex-row justify-content-center">
                                 <li class="nav-item mx-2 ">
-                                    <button class="btn btn-secondary btn-sm"><a class="nav-link" aria-current="page" href="login.html">𝓛𝓸𝓰𝓘𝓷</a></button>
+                                    <button class="btn btn-secondary btn-sm"><a class="nav-link" aria-current="page" href="login.php">𝓛𝓸𝓰𝓘𝓷</a></button>
                                   </li>
                               <li class="nav-item">
-                                <button class="btn btn-secondary btn-sm"><a class="nav-link" href="signup.html">𝓢𝓲𝓰𝓷𝓤𝓹</a></button>
+                                <button class="btn btn-secondary btn-sm"><a class="nav-link" href="signup.php">𝓢𝓲𝓰𝓷𝓤𝓹</a></button>
                               </li>
                             </ul>
                         </div>
@@ -48,7 +47,7 @@
                     </div>
                     <div class="d-flex flex-column align-items-center ">
                         <button type="submit" class="btn btn-light fw-bold mt-3">LOGIN</button>
-                        <p>Not a member? <a href="signup.html">SignUp now</a></p>
+                        <p>Not a member? <a href="signup.php">SignUp now</a></p>
                     </div>
                 </form>
             </div>

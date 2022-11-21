@@ -36,13 +36,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 30px">𝓞𝓻𝓲𝓰𝓲𝓷 𝓖𝓪𝓶𝓮𝓻</a>
+            <a class="navbar-brand" href="dashboard.php"><img src="../img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="height: 30px">𝓞𝓻𝓲𝓰𝓲𝓷 𝓖𝓪𝓶𝓮𝓻</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,10 +52,10 @@
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
               <ul class="navbar-nav flex-wrap me-auto mb-2 mb-lg-0 flex-row justify-content-center">
                 <li class="nav-item mx-3">
-                <a class="nav-link active d-flex" aria-current="page" href="dashboard.html">𝓓𝓪𝓼𝓱𝓑𝓸𝓪𝓻𝓭</a>
+                <a class="nav-link active d-flex" aria-current="page" href="dashboard.php">𝓓𝓪𝓼𝓱𝓑𝓸𝓪𝓻𝓭</a>
                 </li>
                 <li class="nav-item mx-3">
-                  <a class="nav-link active d-flex" href="#">𝓟𝓻𝓸𝓭𝓾𝓬𝓽𝓼</a>
+                  <a class="nav-link active d-flex" href="products.php">𝓟𝓻𝓸𝓭𝓾𝓬𝓽𝓼</a>
                 </li>
               
                 
@@ -88,8 +90,8 @@
   <section>
     <!-- PRODUCTS TABLE -->
     <div class="tableContainer">
-        <div class="d-flex justify-content-end mt-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex" onclick="addProduct()"><i class="bi bi-plus-circle-dotted me-1"></i>Add Product</button>
+        <div class="d-flex justify-content-end m-3">
+            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex " onclick="addProduct()"><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
         </div>
         
       <table class="table table-dark table-hover table-striped ">
@@ -137,10 +139,10 @@
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" class="form">
+				<form action="" method="POST" id="form">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
-						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+						<a href="products.php" class="btn-close"></a>
 					</div>
 					<div class="modal-body">
 							<!-- HIDDEN INPUT  -->
@@ -154,15 +156,15 @@
 							<div class="mb-3">
 								<label class="form-label">Category</label>
 								<select class="form-select" id="product-category" name="category" required>
-									<option selected disabled value="">Please select</option>
-									<option <?= $product['category_id']=='1' ? 'selected' : ''?> value="1">Graphic Card</option>
-									<option <?= $product['category_id']=='2' ? 'selected' : ''?> value="2">Processor</option>
-									<option <?= $product['category_id']=='3' ? 'selected' : ''?> value="3">Power Suply</option>
-									<option <?= $product['category_id']=='4' ? 'selected' : ''?> value="4">HDD Storage</option>
-									<option <?= $product['category_id']=='5' ? 'selected' : ''?> value="5">SSD Storage</option>
-									<option <?= $product['category_id']=='6' ? 'selected' : ''?> value="6">Cooler</option>
-									<option <?= $product['category_id']=='7' ? 'selected' : ''?> value="7">Case</option>
-									<option <?= $product['category_id']=='8' ? 'selected' : ''?> value="8">Mother Board</option>
+									<option selected disabled value="0">Please select</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='1' ? 'selected' : ''?> value="1">Graphic Card</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='2' ? 'selected' : ''?> value="2">Processor</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='3' ? 'selected' : ''?> value="3">Power Suply</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='4' ? 'selected' : ''?> value="4">HDD Storage</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='5' ? 'selected' : ''?> value="5">SSD Storage</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='6' ? 'selected' : ''?> value="6">Cooler</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='7' ? 'selected' : ''?> value="7">Case</option>
+									<option <?= isset($product['category_id'])&&$product['category_id']=='8' ? 'selected' : ''?> value="8">Mother Board</option>
 								</select>
 							</div>
 
@@ -190,7 +192,7 @@
 						
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+						<a href="products.php" class="btn btn-secondary" >Cancel</a>
 						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="save">Save</button>
 						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="update">Update</button>
 					</div>
@@ -199,7 +201,6 @@
 		</div>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
   <?php if (isset($_GET['getProduct'])) { ?>
     window.onload = function() {
