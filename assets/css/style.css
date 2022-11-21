@@ -40,3 +40,15 @@ body {
     padding:0;
     }    
 }
+
+
+/*changing the style of the new search div*/
+#myTable_wrapper{
+    background-color: white!important ;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow-x:auto;
+}
+#myTable_wrapper input{ 
+    margin-bottom: 1rem;
+}
