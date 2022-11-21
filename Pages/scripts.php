@@ -109,16 +109,35 @@ function updateProduct(){
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
     $idProduct=$_POST['product-id']; //product-id is the hidden input in the modal
-    // image
     $id=$_SESSION['id'];
-    
-
     $description = $_POST['description'];
-    //SQL INSERT
+    $basename = $_FILES['picture']['name'];
+    if(empty($basename)){
+        //SQL INSERT
+            $query= "UPDATE products 
+                    SET name='$name', description='$description', price='$price', quantity ='$quantity', category_id ='$category'
+                    WHERE id='$idProduct'";
+    }else{
+        //Upload img
+    //-----------------------------------------------
+    $tmp_picture_name     = $_FILES['picture']['tmp_name'];
+    //unique id img
+    $new_unique_name      = uniqid('',true);
+    //
+    $image = $new_unique_name . $basename;
+    //check picture
+            if(!empty($_FILES['picture']['name'])){
+                $distination_file = '../img/upload/'.$image;
+            }
+    
+    //Func upload picture
+    move_uploaded_file($tmp_picture_name,$distination_file);
+    //-----------------------------------------------
     $query= "UPDATE products 
-            SET name='$name', description='$description', price='$price', quantity ='$quantity', category_id ='$category'
-            WHERE id='$idProduct'";
-
+                    SET name='$name', description='$description', price='$price', quantity ='$quantity', category_id ='$category', picture='$image'
+                    WHERE id='$idProduct'";
+    }
+    
     global $connection;//to make it visible into the scope of the function 
 
     $_SESSION['message'] = "Product has been updated successfully !";
