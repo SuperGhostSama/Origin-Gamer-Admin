@@ -12,8 +12,7 @@
     $description=$product['description'];
     $categoryID=$product['category_id'];
 
-    // var_dump($product);
-    // die;
+  
   }else{
     $id='';
     $name='';
