@@ -101,7 +101,7 @@
             <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Category</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price DH</th>
             <th scope="col">Quantity</th>
             <th scope="col">Operations</th>
           </tr>
@@ -152,24 +152,23 @@
 								<label class="form-label" >Name</label>
 								<input name="name" type="text" class="form-control" id="product-name" value="<?= $name ?>" required/>
 							</div>
-
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<select class="form-select" id="product-category" name="category" required>
-									<option selected disabled value="0">Please select</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='1' ? 'selected' : ''?> value="1">Graphic Card</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='2' ? 'selected' : ''?> value="2">Processor</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='3' ? 'selected' : ''?> value="3">Power Suply</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='4' ? 'selected' : ''?> value="4">HDD Storage</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='5' ? 'selected' : ''?> value="5">SSD Storage</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='6' ? 'selected' : ''?> value="6">Cooler</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='7' ? 'selected' : ''?> value="7">Case</option>
-									<option <?= isset($product['category_id'])&&$product['category_id']=='8' ? 'selected' : ''?> value="8">Mother Board</option>
+								<select class="form-select" id="product-category" name="category" required="">
+									<option disabled>Please select</option>
+									<option <?= ($categoryID=='1') ? 'selected' : ''?> value="1">Graphic Card</option>
+									<option <?= ($categoryID=='2') ? 'selected' : ''?> value="2">Processor</option>
+									<option <?= ($categoryID=='3') ? 'selected' : ''?> value="3">Power Suply</option>
+									<option <?= ($categoryID=='4') ? 'selected' : ''?> value="4">HDD Storage</option>
+									<option <?= ($categoryID=='5') ? 'selected' : ''?> value="5">SSD Storage</option>
+									<option <?= ($categoryID=='6') ? 'selected' : ''?> value="6">Cooler</option>
+									<option <?= ($categoryID=='7') ? 'selected' : ''?> value="7">Case</option>
+									<option <?= ($categoryID=='8') ? 'selected' : ''?> value="8">Mother Board</option>
 								</select>
 							</div>
 
               <div class="mb-3">
-								<label class="form-label" >Price</label>
+								<label class="form-label" >Price DH</label>
 								<input name="price" type="text" class="form-control" id="product-price" value="<?= $price ?>" required/>
 							</div>
 
