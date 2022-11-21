@@ -21,11 +21,27 @@ function saveProducts()
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
-    // image
     $id=$_SESSION['id'];
 
+    //Upload img
+    //-----------------------------------------------
+    $tmp_picture_name     = $_FILES['picture']['tmp_name'];
+    //unique id img
+    $new_unique_name      = uniqid('',true);
+    //
+    $basename = $_FILES['picture']['name'];
+    $image = $new_unique_name . $basename;
+    //check picture
+    if(!empty($_FILES['picture']['name'])){
+        $distination_file = '../img/upload/'.$image;
+    }
+    
+    //Func upload picture
+    move_uploaded_file($tmp_picture_name,$distination_file);
+    //-----------------------------------------------
+
     //SQL INSERT
-    $query = "INSERT INTO products(name ,category_id ,price,user_id ,quantity , description) VALUES ('$name','$category','$price','$id','$quantity','$description')";
+    $query = "INSERT INTO products(name ,category_id ,price,user_id ,quantity , description, picture) VALUES ('$name','$category','$price','$id','$quantity','$description','$image')";
 
     global $connection;//to make it visible into the scope of the function 
     mysqli_query($connection, $query);

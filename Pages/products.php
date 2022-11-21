@@ -110,7 +110,7 @@
 
           <tr class="text-center">
             <th scope="row"><?php echo $product['id'] ?></th>
-            <td><img class="productImage" src="../img/MSI-RTX-3070.jpg" alt=""></td>
+            <td><img class="productImage" src="../img/upload/<?php echo $product['picture'] ?>" alt=""></td>
             <td> <?php echo $product['name'] ?> </td>
             <td> <?php echo $product['category'] ?> </td>
             <td> <?php echo $product['price'] ?> </td>
@@ -137,7 +137,7 @@
 	<div class="modal fade" id="modal-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form">
+				<form action="" method="POST" id="form" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
 						<a href="products.php" class="btn-close"></a>
@@ -183,7 +183,7 @@
 							<div class="mb-0">
 								<label class="col-md-4 control-label mb-1" for="filebutton">Product Image</label>
 								<div class="col-md-4">
-								<input id="filebutton" name="filebutton" class="input-file" type="file">
+								<input id="picture" name="picture" class="input-file" type="file">
 								</div>
 							</div>
 						
