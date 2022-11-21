@@ -47,6 +47,8 @@ body {
     background-color: white!important ;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
     overflow-x:auto;
 }
 #myTable_wrapper input{ 
