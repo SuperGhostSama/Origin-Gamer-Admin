@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
-// session_start();
-include('session.php');
+
+include('scripts.php');
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -63,7 +63,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <button class="contentTable d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
-                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold">999</span>
+                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterProduct()?></span>
                                     </div>
                                 </div>
                             </button>
@@ -84,7 +84,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <button class="contentTable d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
-                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold">999</span>
+                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterCategories()?></span>
                                     </div>
                                 </div>
                             </button>
@@ -104,7 +104,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <button class="contentTable d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
-                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold">999</span>
+                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterMax().'dh' ?></span>
                                     </div>
                                 </div>
                             </button>
@@ -124,7 +124,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <button class="contentTable d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
-                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold">999</span>
+                                        <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterMin().'dh'?></span>
                                     </div>
                                 </div>
                             </button>

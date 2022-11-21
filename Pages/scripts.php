@@ -112,3 +112,56 @@ function updateProduct(){
     die;
 
 }
+
+//Min Price counter
+function counterMin(){
+    $query= "SELECT MIN(price)
+            FROM products";
+
+    global $connection;
+    $result=mysqli_query($connection, $query);
+
+    $result= mysqli_fetch_array($result);
+    
+    return $result[0];
+
+}
+
+
+//Max Price counter
+function counterMax(){
+    $query= "SELECT MAX(price)
+    FROM products";
+
+global $connection;
+$result=mysqli_query($connection, $query);
+
+$result= mysqli_fetch_array($result);
+
+return $result[0];
+}
+
+//Available Product counter
+function counterProduct(){
+    $query= "SELECT COUNT(id)
+    FROM Products";
+    
+global $connection;
+$result=mysqli_query($connection, $query);
+
+$result= mysqli_fetch_array($result);
+
+return $result[0];
+}
+//Categories counter
+function counterCategories(){
+    $query= "SELECT COUNT(id)
+    FROM categories";
+    
+global $connection;
+$result=mysqli_query($connection, $query);
+
+$result= mysqli_fetch_array($result);
+
+return $result[0];
+}
