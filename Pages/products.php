@@ -69,7 +69,7 @@
                 
                 
               <div class="btn-group d-flex">
-                  <button type="button" class="btn dropdown-toggle text-light ms-1 mt-1" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($_SESSION["username"]); ?></button>
+                  <button type="button" class="btn dropdown-toggle text-light ms-1 mt-1 fw-bold fs-5" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($_SESSION["username"]); ?></button>
                   <ul class="dropdown-menu w-100">
                       <li><a href="profile.php" class="dropdown-item text-dark" type="button">Profile</a></li>
                       <li><a href="logout.php" class="dropdown-item text-dark" type="button">Log out</a></li>
