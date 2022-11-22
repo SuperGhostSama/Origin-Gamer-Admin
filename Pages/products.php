@@ -33,14 +33,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css">
+
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Products</title>
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> <!--defer makes html and js work at the sametime -->
+    <script  src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    
 </head>
 <body>
     <header>
@@ -108,7 +111,7 @@
         </thead>
         <tbody>
 
-          <?php foreach ($products as $product ) { ?> 
+          <?php foreach ($products AS $product ) { ?> 
 
           <tr class="text-center">
             <th class="align-middle" scope="row"><?php echo $product['id'] ?></th>
@@ -139,7 +142,7 @@
 	<div class="modal fade" id="modal-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form" enctype="multipart/form-data">
+				<form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
 						<a href="products.php" class="btn-close"></a>
@@ -154,7 +157,7 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<select class="form-select" id="product-category" name="category" required="">
+								<select class="form-select" id="product-category" name="category" required>
 									<option disabled>Please select</option>
 									<option <?= ($categoryID=='1') ? 'selected' : ''?> value="1">Graphic Card</option>
 									<option <?= ($categoryID=='2') ? 'selected' : ''?> value="2">Processor</option>
@@ -199,24 +202,23 @@
 			</div>
 		</div>
 	</div>
-</body>
-<script>
-  <?php if (isset($_GET['getProduct'])) { ?>
-    window.onload = function() {
-      $("#save").hide();
-      $("#update").show();
-      $("#modal-product").modal("show");
-    };
-<?php }
-  ?>
-</script>
-<!-- used datatables.net to get the search -->
   <script>
-    $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
+    <?php if (isset($_GET['getProduct'])) { ?>
+      window.onload = function() {
+        $("#save").hide();
+        $("#update").show();
+        $("#modal-product").modal("show");
+      };
+  <?php }
+    ?>
   </script>
-<script src="../assets/js/script.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <!-- used datatables.net to get the search -->
+  
+  
+
+  <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
+  <script src="../assets/js/script.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
 </html>
