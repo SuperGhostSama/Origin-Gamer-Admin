@@ -106,13 +106,13 @@
           <?php foreach ($products as $product ) { ?> 
 
           <tr class="text-center">
-            <th scope="row"><?php echo $product['id'] ?></th>
-            <td><img class="productImage" src="../img/upload/<?php echo $product['picture'] ?>" alt=""></td>
-            <td> <?php echo $product['name'] ?> </td>
-            <td> <?php echo $product['category'] ?> </td>
-            <td> <?php echo $product['price'] ?> </td>
-            <td> <?php echo $product['quantity'] ?> </td>
-            <td>
+            <th class="align-middle" scope="row"><?php echo $product['id'] ?></th>
+            <td ><img class="productImage" src="../img/upload/<?php echo $product['picture'] ?>" alt=""></td>
+            <td class="align-middle"> <?php echo $product['name'] ?> </td>
+            <td class="align-middle" > <?php echo $product['category'] ?> </td>
+            <td class="align-middle" > <?php echo $product['price'] ?> </td>
+            <td class="align-middle" > <?php echo $product['quantity'] ?> </td>
+            <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
                     <a href="products.php?getProduct=<?php echo $product['id'] ?>" class="btn btn-warning d-flex"></i>Update</a>
                     <a href="scripts.php?id=<?php echo $product['id'] ?>" class="btn btn-danger d-flex"></i>Delete</a>

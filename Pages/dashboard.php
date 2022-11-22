@@ -54,13 +54,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- DASHBOARD TABLE -->
             <div class="d-flex justify-content-center">
                 <div class="col-7 col-sm-4">
-                    <div class="card mt-4">
+                    <div class="card contentTable mt-4">
                         <div class="card-header bg-dark">
                             <h4 class="text-white my-auto px-1 text-center">Total Products</h4>
                         </div>
                         <!-- TOTAL PRODUCTS COUNT -->
                         <div class="" id="total-products">
-                            <button class="contentTable d-flex list-group-item w-100 text-start">
+                            <button class="d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
                                         <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterProduct()?></span>
@@ -75,13 +75,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- DASHBOARD TABLE -->
             <div class="d-flex justify-content-center">
                 <div class="col-7 col-sm-4">
-                    <div class="card mt-4">
+                    <div class="card contentTable mt-4">
                         <div class="card-header bg-dark">
                             <h4 class="text-white my-auto px-1 text-center">Available Categories</h4>
                         </div>
                         <!-- COUNT -->
                         <div class="" id="available-categories">
-                            <button class="contentTable d-flex list-group-item w-100 text-start">
+                            <button class="d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
                                         <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterCategories()?></span>
@@ -95,13 +95,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- MAX PRICE TABLE -->
             <div class="d-flex justify-content-center">
                 <div class="col-7 col-sm-4">
-                    <div class="card mt-4">
+                    <div class="card contentTable mt-4">
                         <div class="card-header bg-dark">
                             <h4 class="text-white my-auto px-1 text-center">Max Price</h4>
                         </div>
                         <!--COUNT -->
                         <div class="" id="max-price">
-                            <button class="contentTable d-flex list-group-item w-100 text-start">
+                            <button class=" d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
                                         <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterMax().'dh' ?></span>
@@ -115,13 +115,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- MIN PRICE TABLE -->
             <div class="d-flex justify-content-center">
                 <div class="col-7 col-sm-4">
-                    <div class="card mt-4">
+                    <div class="card mt-4 contentTable">
                         <div class="card-header bg-dark">
                             <h4 class="text-white my-auto px-1 text-center">Min Price</h4>
                         </div>
                         <!-- COUNT -->
                         <div class="" id="min-price">
-                            <button class="contentTable d-flex list-group-item w-100 text-start">
+                            <button class=" d-flex list-group-item w-100 text-start">
                                 <div class="ms-auto me-auto">
                                     <div class="py-2">
                                         <span class="btn btn-primary py-3px px-5px fs-5 fw-bold"><?php echo counterMin().'dh'?></span>
